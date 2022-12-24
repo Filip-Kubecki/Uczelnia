@@ -1,0 +1,17 @@
+//        Student s1 = new Student("Filip","Kubecki","02224428542",20,"Male",272655,1, kursy,false,true,false,true,false);
+//        osoby.add(s1);
+//
+//        PracownikBadawczoDydaktyczny p1 = new PracownikBadawczoDydaktyczny("Krzysztof","Kowalski","23465826",54,"Male",5,7845,6, PracownikBadawczoDydaktyczny.stanowiskoPracy.ProfesorZwyczajny, 34);
+//        PracownikBadawczoDydaktyczny p2 = new PracownikBadawczoDydaktyczny("Janusz","Bimbala","23465826",54,"Male",2,7845,6, PracownikBadawczoDydaktyczny.stanowiskoPracy.Adiunktt, 2);
+//        PracownikAdministracyjny p3 = new PracownikAdministracyjny("Andrzej","Nowak","847306732",56,"Male",14,5674,6, PracownikAdministracyjny.stanowiskoPracy.Specjalista);
+//
+//        osoby.add(p1);
+//        osoby.add(p2);
+//        osoby.add(p3);
+//
+//        Kurs k1 = new Kurs("Fizyka",    "Jacak",        5);
+//        Kurs k2 = new Kurs("Analiza",   "Jacak",        5);
+//        Kurs k3 = new Kurs("Fizyka1",   "Jan Misiewicz",4);
+//        kursy.add(k1);
+//        kursy.add(k2);
+//        kursy.add(k3);
