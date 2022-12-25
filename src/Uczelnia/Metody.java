@@ -171,6 +171,47 @@ public class Metody {
         String klucz = scan.nextLine();
         removeElement(osoby,kategoria,klucz,1);
     }
+    private static void usunStudenta(ArrayList<Osoba> osoby)  {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Po czym chcesz wyszukiwać :\n1.Imie\n2.Nazwisko\n3.nrIndeksu\n4.Rok studiów");
+        String kategoria = scan.nextLine();
+        System.out.println("Wpisz słowo klucz:");
+        String klucz = scan.nextLine();
+        removeElement(osoby,kategoria,klucz,2);
+    }
+    private static void usunKurs(ArrayList<Kurs> kursy, ArrayList<Osoba> osoby)  {
+        Scanner scan = new Scanner(System.in);
+        boolean check = true;
+
+        System.out.println("Po czym chcesz wyszukiwać :\n1.Nazwa kursu\n2.Nazwisko prowadzącego\n3. Punkty ECTS");
+        String kategoria = scan.nextLine();
+        System.out.println("Wpisz słowo klucz:");
+        String klucz = scan.nextLine();
+
+        while(check){
+            int index = wyszukajKurs(Integer.parseInt(kategoria),klucz,kursy);
+
+            if (index != -1){
+                kursy.remove(kursy.get(index));
+            }else {
+                check = false;
+            }
+
+            for (Osoba osoba : osoby) {
+                if (osoba instanceof Student){
+                    int idStudenta = wyszukajStudenta(5,kursy.get(index).getNazwaKursu(),osoby);
+                    if (idStudenta != -1){
+                        Student student = (Student) osoby.get(idStudenta);
+                        ArrayList<Kurs> kStudenta = student.getKursy();
+                        boolean check1 = true;
+                        while(check1) {
+                            wyszukajKurs(1,kursy.get(index).getNazwaKursu(),kursy);
+                        }
+                    }
+                }
+            }
+        }
+    }
     private static void usunDane(ArrayList<Kurs> kursy, ArrayList<Osoba> osoby) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Jakie dane chcesz usunąć:\n1.Pracownika\n2.Studenta\n3.Kursu");
@@ -181,10 +222,10 @@ public class Metody {
                     usunPracownika(osoby);
                     break;
                 case 2:
-
+                    usunStudenta(osoby);
                     break;
                 case 3:
-
+                    usunKurs(kursy,osoby);
                     break;
             }
         }else {
@@ -512,15 +553,6 @@ public class Metody {
                     }
                 }
                 break;
-//            while(check){
-//                int index = wyszukajKurs(Integer.parseInt(kategoria),klucz,kurs);
-//                if (index != -1){
-//                    System.out.println(index);
-//                    osoby.remove(osoby.get(index));
-//                }else {
-//                    check = false;
-//                }
-//            }
         }
     }
 

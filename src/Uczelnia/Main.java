@@ -10,11 +10,11 @@ public class Main {
         Metody.deserializuj(osoby,kursy, "serializacja");
 
         //-------------------------------------------------------------------------------------------------------------
-        Metody.wypiszPracownikow(osoby);
+        Metody.wypiszStudentow(osoby);
         //Operacje użytkownika
         Metody.sesjaUrzytkownika(kursy,osoby);
 
-        Metody.wypiszPracownikow(osoby);
+        Metody.wypiszStudentow(osoby);
 
 //      Zapis danych
         Metody.serializuj(osoby, kursy,"serializacja");
